@@ -253,6 +253,7 @@ function ParentOverview() {
       <Text className="hero-kicker">KHÔNG GIAN PHỤ HUYNH</Text>
       <Title1>Tổng quan học tập</Title1>
       <Text className="hero-copy">Theo dõi hồ sơ, tiến độ học gần đây và độ phủ câu hỏi. Tiến độ được lưu cục bộ trên thiết bị này.</Text>
+      {import.meta.env.VITE_DEMO_MODE === 'true' && <Text className="muted">Bản demo lưu hồ sơ, câu hỏi và tiến độ trên trình duyệt này; dữ liệu không đồng bộ giữa các thiết bị.</Text>}
       <div className="hero-actions"><Button appearance="primary" onClick={() => navigate('/parent/import')}>Nhập câu hỏi</Button><Button appearance="subtle" onClick={() => navigate('/')}>Mở bản đồ học tập</Button></div>
     </section>
     <div className="metric-grid"><Metric icon={<WeatherSunnyRegular />} label="Câu trả lời đã ghi nhận" value={String(answerCount)} /><Metric icon={<CheckmarkRegular />} label="Tỷ lệ chính xác" value={accuracy} /><Metric icon={<BookOpenRegular />} label="Chuỗi học liên tiếp" value={longestStreak ? `${longestStreak} ngày` : '—'} /></div>

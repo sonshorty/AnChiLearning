@@ -2,7 +2,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1];
+const base = process.env.GITHUB_ACTIONS === 'true' && repositoryName ? `/${repositoryName}/` : '/';
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -15,8 +19,8 @@ export default defineConfig({
         theme_color: '#146B65',
         background_color: '#F5FAF8',
         display: 'standalone',
-        start_url: '/',
-        icons: [{ src: '/favicon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
+        start_url: base,
+        icons: [{ src: `${base}favicon.svg`, sizes: 'any', type: 'image/svg+xml', purpose: 'any' }],
       },
     }),
   ],
