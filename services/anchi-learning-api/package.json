@@ -1,0 +1,29 @@
+{
+  "name": "@anchi/api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/anchi-learning-api/src/server.js",
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node dist/anchi-learning-api/src/server.js",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.3",
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "cors": "^2.8.5",
+    "pino": "^9.5.0",
+    "pino-http": "^10.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^22.10.1",
+    "typescript": "~5.7.2",
+    "vitest": "2.0.5"
+  }
+}

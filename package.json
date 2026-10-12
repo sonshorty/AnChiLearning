@@ -1,0 +1,10 @@
+{
+  "name": "anchi-learning",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["services/anchi-learning-api", "services/anchi-learning-web", "services/shared"],
+  "scripts": {
+    "build": "npm run build --workspace @anchi/shared && npm run build --workspace @anchi/api && npm run build --workspace @anchi/web",
+    "test": "npm test --workspaces --if-present"
+  }
+}
